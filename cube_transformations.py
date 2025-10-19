@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -189,7 +191,9 @@ def main():
     plot_cube_object(cube_obj_reflect, ax6, "Reflected (X-axis)")
     
     plt.tight_layout()
-    plt.show()
+    plt.savefig('cube_transformations.png', dpi=150, bbox_inches='tight')
+    print("Static transformations saved as 'cube_transformations.png'")
+    plt.close()
 
 def create_animation():
     """Create an animated version showing continuous transformations"""
